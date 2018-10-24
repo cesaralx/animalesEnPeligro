@@ -203,9 +203,89 @@ namespace AnimalesEnPeligro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Available_Updates_28px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Available_Updates_28px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Business_Building_50px_2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Business_Building_50px_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Combo_Chart_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Combo_Chart_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Delete_Bin_28px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Delete_Bin_28px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Door_Opened_64px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Door_Opened_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Google_Maps_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Google_Maps_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Google_Maps_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Google_Maps_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Lion_100px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Lion_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Menu_32px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Menu_32px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +306,26 @@ namespace AnimalesEnPeligro.Properties {
         internal static System.Drawing.Bitmap icons8_Multiply_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Multiply_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Ok_28px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Ok_28px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Opera_Glasses_52px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Opera_Glasses_52px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,6 +363,16 @@ namespace AnimalesEnPeligro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Search_28px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Search_28px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Services_64px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Services_64px", resourceCulture);
@@ -286,6 +396,16 @@ namespace AnimalesEnPeligro.Properties {
         internal static System.Drawing.Bitmap icons8_User_42px_1 {
             get {
                 object obj = ResourceManager.GetObject("icons8_User_42px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Wild_Animals_Sign_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Wild_Animals_Sign_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
