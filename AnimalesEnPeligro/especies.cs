@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace AnimalesEnPeligro
 {
@@ -18,11 +19,11 @@ namespace AnimalesEnPeligro
         public string nombreVulgar { get; set; }
         public string descripcion { get; set; }
         public string genero { get; set; }
-        public byte img { get; set; }
-        public byte estatus { get; set; }
+        public byte[] img { get; set; }
+        public string estatus { get; set; }
 
 
-        void deleteEspecie(int idEspecie)
+        public void deleteEspecie(int idEspecie)
         {
             try
             {
@@ -32,7 +33,7 @@ namespace AnimalesEnPeligro
 
                 if (res == 1)
                 {
-                    MessageBox.Show("Se ha eliminado registro con codigo " + idEspecie.ToString(), "Bajas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(null, "Se ha eliminado registro con codigo " + idEspecie.ToString(), "Bajas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -47,7 +48,8 @@ namespace AnimalesEnPeligro
         }
 
 
-        private void MuestraDataEspecie(DataGridView dgv)
+
+        public void MuestraDataEspecie(DataGridView dgv)
         {
             DataSet datos = new DataSet();
             datos = BD.ConsultaTab("especies", "idEspecie");
@@ -55,18 +57,18 @@ namespace AnimalesEnPeligro
            
         }
 
-        private void registrarEspecie()
+        public void registrarEspecie()
         {
             try
             {
-                string insertar = string.Format("INSERT INTO especies VALUES( null, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", this.nombreCientifico, this.nombreVulgar,
-                    this.descripcion, this.genero, this.img, this.estatus);
+                string insertar = string.Format("INSERT INTO especies VALUES( '{0}', '{1}', '{2}', '{3}', {4}, '{5}')", this.nombreCientifico, this.nombreVulgar,
+                    this.descripcion, this.genero, "@File", this.estatus);
 
-                res = BD.ABM(insertar);
+                res = BD.ABM(insertar, this.img);
 
                 if (res == 1)
                 {
-                    MessageBox.Show("Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(null, "Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -81,19 +83,19 @@ namespace AnimalesEnPeligro
         }
 
 
-        private void modificarEspecie()
+        public void modificarEspecie()
         {
             try
             {
                 string modificar = string.Format("UPDATE especies SET nombreCientifico='{0}', nombreVulgar='{1}', descripcion='{2}', " +
-                     "genero='{3}', img='{4}', estatus='{5}', WHERE idEspecie = {6}", this.nombreCientifico, this.nombreVulgar, 
-                     this.descripcion, this.genero, this.img, this.estatus, this.idEspecie);
+                     "genero='{3}', img={4}, estatus='{5}' WHERE idEspecie = {6}", this.nombreCientifico, this.nombreVulgar, 
+                     this.descripcion, this.genero, "@File", this.estatus, this.idEspecie);
 
-                res = BD.ABM(modificar);
+                res = BD.ABM(modificar, this.img);
 
                 if (res == 1)
                 {
-                    MessageBox.Show("Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(null, "Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }

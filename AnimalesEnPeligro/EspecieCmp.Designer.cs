@@ -38,6 +38,8 @@
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.comboGenero = new MetroFramework.Controls.MetroComboBox();
             this.comboEstatus = new MetroFramework.Controls.MetroComboBox();
+            this.lblFoto = new System.Windows.Forms.Label();
+            this.btnImagen = new MetroFramework.Controls.MetroButton();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -55,7 +57,6 @@
             this.label1.Size = new System.Drawing.Size(104, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Especies";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridEspecies
             // 
@@ -64,7 +65,8 @@
             this.dataGridEspecies.Name = "dataGridEspecies";
             this.dataGridEspecies.Size = new System.Drawing.Size(266, 420);
             this.dataGridEspecies.TabIndex = 2;
-            this.dataGridEspecies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridEspecies.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridEspecies_CellMouseClick);
+            this.dataGridEspecies.Click += new System.EventHandler(this.dataGridEspecies_Click);
             // 
             // txtIdEspecie
             // 
@@ -84,7 +86,6 @@
             this.txtIdEspecie.Size = new System.Drawing.Size(134, 33);
             this.txtIdEspecie.TabIndex = 3;
             this.txtIdEspecie.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtIdEspecie.OnValueChanged += new System.EventHandler(this.txtIdEspecie_OnValueChanged);
             // 
             // txtNombreCientifico
             // 
@@ -98,13 +99,12 @@
             this.txtNombreCientifico.LineIdleColor = System.Drawing.Color.Gray;
             this.txtNombreCientifico.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txtNombreCientifico.LineThickness = 2;
-            this.txtNombreCientifico.Location = new System.Drawing.Point(312, 127);
+            this.txtNombreCientifico.Location = new System.Drawing.Point(312, 141);
             this.txtNombreCientifico.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreCientifico.Name = "txtNombreCientifico";
-            this.txtNombreCientifico.Size = new System.Drawing.Size(247, 33);
+            this.txtNombreCientifico.Size = new System.Drawing.Size(309, 33);
             this.txtNombreCientifico.TabIndex = 4;
             this.txtNombreCientifico.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNombreCientifico.OnValueChanged += new System.EventHandler(this.txtNombreCientifico_OnValueChanged);
             // 
             // txtNombreVulgar
             // 
@@ -121,10 +121,9 @@
             this.txtNombreVulgar.Location = new System.Drawing.Point(312, 194);
             this.txtNombreVulgar.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreVulgar.Name = "txtNombreVulgar";
-            this.txtNombreVulgar.Size = new System.Drawing.Size(247, 33);
+            this.txtNombreVulgar.Size = new System.Drawing.Size(309, 33);
             this.txtNombreVulgar.TabIndex = 5;
             this.txtNombreVulgar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNombreVulgar.OnValueChanged += new System.EventHandler(this.txtNombreVulgar_OnValueChanged);
             // 
             // txtDescripcion
             // 
@@ -141,10 +140,9 @@
             this.txtDescripcion.Location = new System.Drawing.Point(312, 251);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(247, 33);
+            this.txtDescripcion.Size = new System.Drawing.Size(309, 33);
             this.txtDescripcion.TabIndex = 6;
             this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDescripcion.OnValueChanged += new System.EventHandler(this.txtDescripcion_OnValueChanged);
             // 
             // metroContextMenu1
             // 
@@ -155,23 +153,54 @@
             // 
             this.comboGenero.FormattingEnabled = true;
             this.comboGenero.ItemHeight = 23;
+            this.comboGenero.Items.AddRange(new object[] {
+            "Macho",
+            "Hembra"});
             this.comboGenero.Location = new System.Drawing.Point(312, 310);
             this.comboGenero.Name = "comboGenero";
-            this.comboGenero.Size = new System.Drawing.Size(247, 29);
+            this.comboGenero.PromptText = "Genero";
+            this.comboGenero.Size = new System.Drawing.Size(134, 29);
             this.comboGenero.TabIndex = 9;
             this.comboGenero.UseSelectable = true;
-            this.comboGenero.SelectedIndexChanged += new System.EventHandler(this.comboGenero_SelectedIndexChanged);
             // 
             // comboEstatus
             // 
             this.comboEstatus.FormattingEnabled = true;
             this.comboEstatus.ItemHeight = 23;
-            this.comboEstatus.Location = new System.Drawing.Point(312, 368);
+            this.comboEstatus.Items.AddRange(new object[] {
+            "Sobreviviendo",
+            "Casi extinto",
+            "Extinto"});
+            this.comboEstatus.Location = new System.Drawing.Point(490, 310);
             this.comboEstatus.Name = "comboEstatus";
-            this.comboEstatus.Size = new System.Drawing.Size(247, 29);
+            this.comboEstatus.PromptText = "Estatus";
+            this.comboEstatus.Size = new System.Drawing.Size(131, 29);
             this.comboEstatus.TabIndex = 10;
             this.comboEstatus.UseSelectable = true;
-            this.comboEstatus.SelectedIndexChanged += new System.EventHandler(this.comboEstatus_SelectedIndexChanged);
+            // 
+            // lblFoto
+            // 
+            this.lblFoto.AutoSize = true;
+            this.lblFoto.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lblFoto.Location = new System.Drawing.Point(312, 361);
+            this.lblFoto.Name = "lblFoto";
+            this.lblFoto.Size = new System.Drawing.Size(0, 17);
+            this.lblFoto.TabIndex = 15;
+            // 
+            // btnImagen
+            // 
+            this.btnImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnImagen.BackgroundImage = global::AnimalesEnPeligro.Properties.Resources.icons8_Download_104px_1;
+            this.btnImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImagen.Location = new System.Drawing.Point(490, 361);
+            this.btnImagen.Name = "btnImagen";
+            this.btnImagen.Size = new System.Drawing.Size(131, 46);
+            this.btnImagen.Style = MetroFramework.MetroColorStyle.Black;
+            this.btnImagen.TabIndex = 14;
+            this.btnImagen.Text = "Imagen";
+            this.btnImagen.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnImagen.UseSelectable = true;
+            this.btnImagen.MouseHover += new System.EventHandler(this.btnImagen_MouseHover);
             // 
             // btnModificar
             // 
@@ -227,6 +256,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblFoto);
+            this.Controls.Add(this.btnImagen);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.btnBuscar);
@@ -261,5 +292,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Button btnModificar;
+        private MetroFramework.Controls.MetroButton btnImagen;
+        private System.Windows.Forms.Label lblFoto;
     }
 }

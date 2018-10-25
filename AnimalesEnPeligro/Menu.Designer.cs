@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbFecha = new System.Windows.Forms.Label();
+            this.btnMenuDesplegable = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMinimizar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMaximizar = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelSidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelReportes = new System.Windows.Forms.Panel();
@@ -49,19 +54,16 @@
             this.btnEspecies = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSalir = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnObservaciones = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnMenuDesplegable = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMinimizar = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMaximizar = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
-            this.especieCmp1 = new AnimalesEnPeligro.EspecieCmp();
+            this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.zonasCmp1 = new AnimalesEnPeligro.ZonasCmp();
+            this.especieCmp1 = new AnimalesEnPeligro.EspecieCmp();
             this.panel1.SuspendLayout();
-            this.panelSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuDesplegable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -78,6 +80,7 @@
             this.panel1.Controls.Add(this.btnMaximizar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnCerrar);
+            this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -88,6 +91,7 @@
             // 
             this.lbFecha.AutoSize = true;
             this.lbFecha.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.lbFecha, BunifuAnimatorNS.DecorationType.None);
             this.lbFecha.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFecha.ForeColor = System.Drawing.Color.White;
             this.lbFecha.Location = new System.Drawing.Point(52, 12);
@@ -96,10 +100,54 @@
             this.lbFecha.TabIndex = 18;
             this.lbFecha.Text = "text";
             // 
+            // btnMenuDesplegable
+            // 
+            this.btnMenuDesplegable.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.btnMenuDesplegable, BunifuAnimatorNS.DecorationType.None);
+            this.btnMenuDesplegable.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Menu_32px_1;
+            this.btnMenuDesplegable.ImageActive = null;
+            this.btnMenuDesplegable.Location = new System.Drawing.Point(12, 5);
+            this.btnMenuDesplegable.Name = "btnMenuDesplegable";
+            this.btnMenuDesplegable.Size = new System.Drawing.Size(32, 32);
+            this.btnMenuDesplegable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnMenuDesplegable.TabIndex = 17;
+            this.btnMenuDesplegable.TabStop = false;
+            this.btnMenuDesplegable.Zoom = 10;
+            this.btnMenuDesplegable.Click += new System.EventHandler(this.btnMenuDesplegable_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.btnMinimizar, BunifuAnimatorNS.DecorationType.None);
+            this.btnMinimizar.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Minus_32px;
+            this.btnMinimizar.ImageActive = null;
+            this.btnMinimizar.Location = new System.Drawing.Point(761, 6);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 16;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Zoom = 10;
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.btnMaximizar, BunifuAnimatorNS.DecorationType.None);
+            this.btnMaximizar.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Unchecked_Checkbox_32px_1;
+            this.btnMaximizar.ImageActive = null;
+            this.btnMaximizar.Location = new System.Drawing.Point(792, 5);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMaximizar.TabIndex = 15;
+            this.btnMaximizar.TabStop = false;
+            this.btnMaximizar.Zoom = 10;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(292, 6);
@@ -107,6 +155,21 @@
             this.label1.Size = new System.Drawing.Size(365, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Animales en peligro de Extinción";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.btnCerrar, BunifuAnimatorNS.DecorationType.None);
+            this.btnCerrar.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Multiply_32px;
+            this.btnCerrar.ImageActive = null;
+            this.btnCerrar.Location = new System.Drawing.Point(823, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 14;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Zoom = 10;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panelSidebar
             // 
@@ -126,6 +189,7 @@
             this.panelSidebar.Controls.Add(this.btnEspecies);
             this.panelSidebar.Controls.Add(this.btnSalir);
             this.panelSidebar.Controls.Add(this.btnObservaciones);
+            this.bunifuTransition1.SetDecoration(this.panelSidebar, BunifuAnimatorNS.DecorationType.None);
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSidebar.GradientBottomLeft = System.Drawing.Color.MidnightBlue;
             this.panelSidebar.GradientBottomRight = System.Drawing.Color.MediumBlue;
@@ -145,6 +209,7 @@
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "Reportes";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.bunifuFlatButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
@@ -176,6 +241,7 @@
             // panelReportes
             // 
             this.panelReportes.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.panelReportes, BunifuAnimatorNS.DecorationType.None);
             this.panelReportes.Location = new System.Drawing.Point(0, 400);
             this.panelReportes.Name = "panelReportes";
             this.panelReportes.Size = new System.Drawing.Size(10, 60);
@@ -190,6 +256,7 @@
             this.btnZonas.BorderRadius = 0;
             this.btnZonas.ButtonText = "Zonas";
             this.btnZonas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.btnZonas, BunifuAnimatorNS.DecorationType.None);
             this.btnZonas.DisabledColor = System.Drawing.Color.Gray;
             this.btnZonas.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZonas.Iconcolor = System.Drawing.Color.Transparent;
@@ -222,6 +289,7 @@
             // panelZonas
             // 
             this.panelZonas.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.panelZonas, BunifuAnimatorNS.DecorationType.None);
             this.panelZonas.Location = new System.Drawing.Point(0, 340);
             this.panelZonas.Name = "panelZonas";
             this.panelZonas.Size = new System.Drawing.Size(10, 60);
@@ -231,6 +299,7 @@
             // panelObservadores
             // 
             this.panelObservadores.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.panelObservadores, BunifuAnimatorNS.DecorationType.None);
             this.panelObservadores.Location = new System.Drawing.Point(0, 280);
             this.panelObservadores.Name = "panelObservadores";
             this.panelObservadores.Size = new System.Drawing.Size(10, 60);
@@ -245,6 +314,7 @@
             this.btnAsociaciones.BorderRadius = 0;
             this.btnAsociaciones.ButtonText = "Asociaciones";
             this.btnAsociaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.btnAsociaciones, BunifuAnimatorNS.DecorationType.None);
             this.btnAsociaciones.DisabledColor = System.Drawing.Color.Gray;
             this.btnAsociaciones.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsociaciones.Iconcolor = System.Drawing.Color.Transparent;
@@ -276,6 +346,7 @@
             // panelAsociaciones
             // 
             this.panelAsociaciones.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.panelAsociaciones, BunifuAnimatorNS.DecorationType.None);
             this.panelAsociaciones.Location = new System.Drawing.Point(0, 221);
             this.panelAsociaciones.Name = "panelAsociaciones";
             this.panelAsociaciones.Size = new System.Drawing.Size(10, 60);
@@ -290,6 +361,7 @@
             this.btnObservadores.BorderRadius = 0;
             this.btnObservadores.ButtonText = "Observadores";
             this.btnObservadores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.btnObservadores, BunifuAnimatorNS.DecorationType.None);
             this.btnObservadores.DisabledColor = System.Drawing.Color.Gray;
             this.btnObservadores.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObservadores.Iconcolor = System.Drawing.Color.Transparent;
@@ -321,6 +393,7 @@
             // panelObservaciones
             // 
             this.panelObservaciones.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.panelObservaciones, BunifuAnimatorNS.DecorationType.None);
             this.panelObservaciones.Location = new System.Drawing.Point(-1, 161);
             this.panelObservaciones.Name = "panelObservaciones";
             this.panelObservaciones.Size = new System.Drawing.Size(10, 60);
@@ -330,6 +403,7 @@
             // panelEspecies
             // 
             this.panelEspecies.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.panelEspecies, BunifuAnimatorNS.DecorationType.None);
             this.panelEspecies.Location = new System.Drawing.Point(-1, 102);
             this.panelEspecies.Name = "panelEspecies";
             this.panelEspecies.Size = new System.Drawing.Size(10, 60);
@@ -339,6 +413,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox1.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Lion_100px;
             this.pictureBox1.Location = new System.Drawing.Point(0, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -355,6 +430,7 @@
             this.btnEspecies.BorderRadius = 0;
             this.btnEspecies.ButtonText = "Especies";
             this.btnEspecies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.btnEspecies, BunifuAnimatorNS.DecorationType.None);
             this.btnEspecies.DisabledColor = System.Drawing.Color.Gray;
             this.btnEspecies.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEspecies.Iconcolor = System.Drawing.Color.Transparent;
@@ -392,6 +468,7 @@
             this.btnSalir.BorderRadius = 0;
             this.btnSalir.ButtonText = "Salir";
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.btnSalir, BunifuAnimatorNS.DecorationType.None);
             this.btnSalir.DisabledColor = System.Drawing.Color.Gray;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Iconcolor = System.Drawing.Color.Transparent;
@@ -429,6 +506,7 @@
             this.btnObservaciones.BorderRadius = 0;
             this.btnObservaciones.ButtonText = "Observaciones";
             this.btnObservaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.btnObservaciones, BunifuAnimatorNS.DecorationType.None);
             this.btnObservaciones.DisabledColor = System.Drawing.Color.Gray;
             this.btnObservaciones.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObservaciones.Iconcolor = System.Drawing.Color.Transparent;
@@ -457,75 +535,45 @@
             this.btnObservaciones.Textcolor = System.Drawing.Color.White;
             this.btnObservaciones.TextFont = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnMenuDesplegable
+            // bunifuTransition1
             // 
-            this.btnMenuDesplegable.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenuDesplegable.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Menu_32px_1;
-            this.btnMenuDesplegable.ImageActive = null;
-            this.btnMenuDesplegable.Location = new System.Drawing.Point(12, 5);
-            this.btnMenuDesplegable.Name = "btnMenuDesplegable";
-            this.btnMenuDesplegable.Size = new System.Drawing.Size(32, 32);
-            this.btnMenuDesplegable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnMenuDesplegable.TabIndex = 17;
-            this.btnMenuDesplegable.TabStop = false;
-            this.btnMenuDesplegable.Zoom = 10;
-            this.btnMenuDesplegable.Click += new System.EventHandler(this.btnMenuDesplegable_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Minus_32px;
-            this.btnMinimizar.ImageActive = null;
-            this.btnMinimizar.Location = new System.Drawing.Point(761, 6);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 16;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Zoom = 10;
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximizar.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Unchecked_Checkbox_32px_1;
-            this.btnMaximizar.ImageActive = null;
-            this.btnMaximizar.Location = new System.Drawing.Point(792, 5);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMaximizar.TabIndex = 15;
-            this.btnMaximizar.TabStop = false;
-            this.btnMaximizar.Zoom = 10;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Multiply_32px;
-            this.btnCerrar.ImageActive = null;
-            this.btnCerrar.Location = new System.Drawing.Point(823, 6);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 14;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Zoom = 10;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // especieCmp1
-            // 
-            this.especieCmp1.BackColor = System.Drawing.Color.White;
-            this.especieCmp1.Location = new System.Drawing.Point(208, 48);
-            this.especieCmp1.Name = "especieCmp1";
-            this.especieCmp1.Size = new System.Drawing.Size(652, 514);
-            this.especieCmp1.TabIndex = 10;
+            this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
+            this.bunifuTransition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
+            this.bunifuTransition1.TimeStep = 0.03F;
             // 
             // zonasCmp1
             // 
             this.zonasCmp1.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.zonasCmp1, BunifuAnimatorNS.DecorationType.None);
             this.zonasCmp1.Location = new System.Drawing.Point(208, 48);
             this.zonasCmp1.Name = "zonasCmp1";
             this.zonasCmp1.Size = new System.Drawing.Size(652, 514);
             this.zonasCmp1.TabIndex = 11;
+            // 
+            // especieCmp1
+            // 
+            this.especieCmp1.BackColor = System.Drawing.Color.White;
+            this.bunifuTransition1.SetDecoration(this.especieCmp1, BunifuAnimatorNS.DecorationType.None);
+            this.especieCmp1.Location = new System.Drawing.Point(208, 48);
+            this.especieCmp1.Name = "especieCmp1";
+            this.especieCmp1.Size = new System.Drawing.Size(652, 514);
+            this.especieCmp1.TabIndex = 10;
             // 
             // Menu
             // 
@@ -537,18 +585,19 @@
             this.Controls.Add(this.especieCmp1);
             this.Controls.Add(this.panelSidebar);
             this.Controls.Add(this.panel1);
+            this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuDesplegable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            this.panelSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -580,5 +629,6 @@
         private System.Windows.Forms.Panel panelReportes;
         private ZonasCmp zonasCmp1;
         private EspecieCmp especieCmp1;
+        private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
     }
 }

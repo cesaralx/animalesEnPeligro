@@ -27,6 +27,7 @@ namespace AnimalesEnPeligro
             {
                 panelSidebar.Width = 211;
             }
+            bunifuTransition1.ShowSync(panelSidebar);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

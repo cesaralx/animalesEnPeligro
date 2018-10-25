@@ -294,5 +294,8 @@
   <ItemGroup>
     <None Include="Resources\icons8_Combo_Chart_50px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Download_104px_1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
