@@ -351,5 +351,8 @@
   <ItemGroup>
     <None Include="Resources\icons8_Screensharing_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Download_104px_1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

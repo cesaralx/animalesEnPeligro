@@ -35,6 +35,11 @@ namespace AnimalesEnPeligro
             if (imagen != null){
                 comando.Parameters.Add("@File", SqlDbType.VarBinary, imagen.Length).Value = imagen;
             }
+            else
+            {
+                comando.Parameters.Add("@File", SqlDbType.VarBinary, -1).Value = DBNull.Value;
+
+            }
             respuesta = comando.ExecuteNonQuery();
             conn.Close();
             return respuesta;

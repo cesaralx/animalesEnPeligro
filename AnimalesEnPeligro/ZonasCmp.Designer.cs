@@ -124,6 +124,8 @@
             this.dataGriedZonas.Name = "dataGriedZonas";
             this.dataGriedZonas.Size = new System.Drawing.Size(266, 420);
             this.dataGriedZonas.TabIndex = 15;
+            this.dataGriedZonas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGriedZonas_CellMouseClick);
+            this.dataGriedZonas.Click += new System.EventHandler(this.dataGriedZonas_Click);
             // 
             // label1
             // 
@@ -154,7 +156,6 @@
             this.txtCaracteristicas.Name = "txtCaracteristicas";
             this.txtCaracteristicas.Size = new System.Drawing.Size(247, 33);
             this.txtCaracteristicas.TabIndex = 25;
-            this.txtCaracteristicas.Text = "Municipio";
             this.txtCaracteristicas.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btnModificar
@@ -172,6 +173,7 @@
             this.btnModificar.TabIndex = 24;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAlta
             // 
@@ -187,6 +189,7 @@
             this.btnAlta.TabIndex = 23;
             this.btnAlta.Text = "Alta";
             this.btnAlta.UseVisualStyleBackColor = false;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
             // btnBuscar
             // 
@@ -202,6 +205,7 @@
             this.btnBuscar.TabIndex = 22;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // ZonasCmp
             // 
@@ -220,6 +224,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ZonasCmp";
             this.Size = new System.Drawing.Size(652, 514);
+            this.Load += new System.EventHandler(this.ZonasCmp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGriedZonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

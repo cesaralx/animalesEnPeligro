@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace AnimalesEnPeligro
 {
@@ -32,7 +33,7 @@ namespace AnimalesEnPeligro
 
                 if (res == 1)
                 {
-                    MessageBox.Show("Se ha eliminado registro con codigo " + idEspecie.ToString(), "Bajas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(null, "Se ha eliminado registro con codigo " + idEspecie.ToString(), "Bajas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -45,6 +46,7 @@ namespace AnimalesEnPeligro
                 Conexion.conn.Close();
             }
         }
+
 
 
         public void MuestraDataEspecie(DataGridView dgv)
@@ -66,7 +68,7 @@ namespace AnimalesEnPeligro
 
                 if (res == 1)
                 {
-                    MessageBox.Show("Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(null, "Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -86,14 +88,14 @@ namespace AnimalesEnPeligro
             try
             {
                 string modificar = string.Format("UPDATE especies SET nombreCientifico='{0}', nombreVulgar='{1}', descripcion='{2}', " +
-                     "genero='{3}', img='{4}', estatus='{5}', WHERE idEspecie = {6}", this.nombreCientifico, this.nombreVulgar, 
-                     this.descripcion, this.genero, this.img, this.estatus, this.idEspecie);
+                     "genero='{3}', img={4}, estatus='{5}' WHERE idEspecie = {6}", this.nombreCientifico, this.nombreVulgar, 
+                     this.descripcion, this.genero, "@File", this.estatus, this.idEspecie);
 
-                res = BD.ABM(modificar);
+                res = BD.ABM(modificar, this.img);
 
                 if (res == 1)
                 {
-                    MessageBox.Show("Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(null, "Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
