@@ -167,10 +167,6 @@
             // 
             this.comboEstatus.FormattingEnabled = true;
             this.comboEstatus.ItemHeight = 23;
-            this.comboEstatus.Items.AddRange(new object[] {
-            "Sobreviviendo",
-            "Casi extinto",
-            "Extinto"});
             this.comboEstatus.Location = new System.Drawing.Point(490, 310);
             this.comboEstatus.Name = "comboEstatus";
             this.comboEstatus.PromptText = "Estatus";

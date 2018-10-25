@@ -42,6 +42,32 @@ namespace AnimalesEnPeligro
         private void EspecieCmp_Load(object sender, EventArgs e)
         {
             espe.MuestraDataEspecie(dataGridEspecies);
+            cargaCombos();
+
+
+        }
+
+        private void cargaCombos()
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                DataSet ds2 = new DataSet();
+                ds = BD.Busca(string.Format("SELECT idEstatus, descripcion from estatus"), "estatus");
+
+                comboEstatus.DisplayMember = "descripcion";
+                comboEstatus.ValueMember = "idEstatus";
+                comboEstatus.DataSource = ds.Tables["estatus"];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.conn.Close();
+            }
         }
 
 
@@ -84,15 +110,16 @@ namespace AnimalesEnPeligro
             {
                 //if (dataImage != null)
                 //{
-                    espe.descripcion = txtDescripcion.Text;
-                    espe.estatus = txtIdEspecie.Text;
-                    espe.genero = comboGenero.SelectedItem.ToString();
-                    espe.img = dataImage;
-                    espe.nombreCientifico = txtNombreCientifico.Text;
-                    espe.nombreVulgar = txtNombreVulgar.Text;
-                    espe.registrarEspecie();
-                    espe.MuestraDataEspecie(dataGridEspecies);
-                    cleanFields();
+                espe.descripcion = txtDescripcion.Text;
+                espe.estatus = comboEstatus.SelectedValue.ToString();
+                espe.genero = comboGenero.SelectedItem.ToString();
+                espe.img = dataImage;
+                espe.nombreCientifico = txtNombreCientifico.Text;
+                espe.nombreVulgar = txtNombreVulgar.Text;
+                espe.registrarEspecie();
+                espe.MuestraDataEspecie(dataGridEspecies);
+                cleanFields();
+
                 //}
                 //else
                 //{
