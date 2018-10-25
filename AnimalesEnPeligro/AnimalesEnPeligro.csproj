@@ -61,6 +61,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="asociaciones.cs" />
+    <Compile Include="AsociacionesCmp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AsociacionesCmp.Designer.cs">
+      <DependentUpon>AsociacionesCmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsociacionesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsociacionesForm.Designer.cs">
+      <DependentUpon>AsociacionesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="domicilios.cs" />
     <Compile Include="EspecieCmp.cs">
@@ -84,7 +96,31 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="observaciones.cs" />
+    <Compile Include="ObservacionesCmp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObservacionesCmp.Designer.cs">
+      <DependentUpon>ObservacionesCmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="observadores.cs" />
+    <Compile Include="ObservadoresCmp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObservadoresCmp.Designer.cs">
+      <DependentUpon>ObservadoresCmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObservadoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObservadoresForm.Designer.cs">
+      <DependentUpon>ObservadoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObservacionesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObservacionesForm.Designer.cs">
+      <DependentUpon>ObservacionesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="privilegios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +138,12 @@
     <Compile Include="ZonasCmp.Designer.cs">
       <DependentUpon>ZonasCmp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AsociacionesCmp.resx">
+      <DependentUpon>AsociacionesCmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsociacionesForm.resx">
+      <DependentUpon>AsociacionesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EspecieCmp.resx">
       <DependentUpon>EspecieCmp.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +152,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObservacionesCmp.resx">
+      <DependentUpon>ObservacionesCmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObservadoresCmp.resx">
+      <DependentUpon>ObservadoresCmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObservadoresForm.resx">
+      <DependentUpon>ObservadoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObservacionesForm.resx">
+      <DependentUpon>ObservacionesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -293,6 +347,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Combo_Chart_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Screensharing_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,16 +27,32 @@ namespace AnimalesEnPeligro
 
         }
 
-        public int ABM(string instruccion)
+        public int ABM(string instruccion, byte[] imagen = null)
         {
             int respuesta = -1;
             SqlCommand comando = new SqlCommand(instruccion, conn);
             conn.Open();
+            if (imagen != null){
+                comando.Parameters.Add("@File", SqlDbType.VarBinary, imagen.Length).Value = imagen;
+            }
             respuesta = comando.ExecuteNonQuery();
             conn.Close();
             return respuesta;
         }
 
+        public DataSet Busca(string consu, string tabla)
+        {
+            DataSet ConjuntoDatos = new DataSet();
+            SqlCommand comando = new SqlCommand(consu, conn);
+            SqlDataAdapter adaptador = new SqlDataAdapter
+            {
+                SelectCommand = comando
+            };
+            conn.Open();
+            adaptador.Fill(ConjuntoDatos, tabla);
+            conn.Close();
+            return ConjuntoDatos;
+        }
 
 
 

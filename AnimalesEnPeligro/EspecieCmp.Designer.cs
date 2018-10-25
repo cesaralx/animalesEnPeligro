@@ -41,6 +41,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnImagen = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEspecies)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +70,7 @@
             // txtIdEspecie
             // 
             this.txtIdEspecie.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdEspecie.Enabled = false;
             this.txtIdEspecie.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtIdEspecie.ForeColor = System.Drawing.Color.Black;
             this.txtIdEspecie.HintForeColor = System.Drawing.Color.Empty;
@@ -155,9 +157,13 @@
             // 
             this.comboGenero.FormattingEnabled = true;
             this.comboGenero.ItemHeight = 23;
+            this.comboGenero.Items.AddRange(new object[] {
+            "Macho",
+            "Hembra"});
             this.comboGenero.Location = new System.Drawing.Point(312, 310);
             this.comboGenero.Name = "comboGenero";
-            this.comboGenero.Size = new System.Drawing.Size(247, 29);
+            this.comboGenero.PromptText = "Genero";
+            this.comboGenero.Size = new System.Drawing.Size(108, 29);
             this.comboGenero.TabIndex = 9;
             this.comboGenero.UseSelectable = true;
             this.comboGenero.SelectedIndexChanged += new System.EventHandler(this.comboGenero_SelectedIndexChanged);
@@ -166,9 +172,14 @@
             // 
             this.comboEstatus.FormattingEnabled = true;
             this.comboEstatus.ItemHeight = 23;
-            this.comboEstatus.Location = new System.Drawing.Point(312, 368);
+            this.comboEstatus.Items.AddRange(new object[] {
+            "Sobreviviendo",
+            "Casi extinto",
+            "Extinto"});
+            this.comboEstatus.Location = new System.Drawing.Point(451, 310);
             this.comboEstatus.Name = "comboEstatus";
-            this.comboEstatus.Size = new System.Drawing.Size(247, 29);
+            this.comboEstatus.PromptText = "Estatus";
+            this.comboEstatus.Size = new System.Drawing.Size(108, 29);
             this.comboEstatus.TabIndex = 10;
             this.comboEstatus.UseSelectable = true;
             this.comboEstatus.SelectedIndexChanged += new System.EventHandler(this.comboEstatus_SelectedIndexChanged);
@@ -222,11 +233,25 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnImagen
+            // 
+            this.btnImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnImagen.Location = new System.Drawing.Point(451, 361);
+            this.btnImagen.Name = "btnImagen";
+            this.btnImagen.Size = new System.Drawing.Size(108, 30);
+            this.btnImagen.Style = MetroFramework.MetroColorStyle.Black;
+            this.btnImagen.TabIndex = 14;
+            this.btnImagen.Text = "Imagen";
+            this.btnImagen.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnImagen.UseSelectable = true;
+            this.btnImagen.MouseHover += new System.EventHandler(this.btnImagen_MouseHover);
+            // 
             // EspecieCmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnImagen);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.btnBuscar);
@@ -261,5 +286,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Button btnModificar;
+        private MetroFramework.Controls.MetroButton btnImagen;
     }
 }

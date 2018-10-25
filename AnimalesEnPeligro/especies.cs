@@ -18,11 +18,11 @@ namespace AnimalesEnPeligro
         public string nombreVulgar { get; set; }
         public string descripcion { get; set; }
         public string genero { get; set; }
-        public byte img { get; set; }
-        public byte estatus { get; set; }
+        public byte[] img { get; set; }
+        public string estatus { get; set; }
 
 
-        void deleteEspecie(int idEspecie)
+        public void deleteEspecie(int idEspecie)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace AnimalesEnPeligro
         }
 
 
-        private void MuestraDataEspecie(DataGridView dgv)
+        public void MuestraDataEspecie(DataGridView dgv)
         {
             DataSet datos = new DataSet();
             datos = BD.ConsultaTab("especies", "idEspecie");
@@ -55,14 +55,14 @@ namespace AnimalesEnPeligro
            
         }
 
-        private void registrarEspecie()
+        public void registrarEspecie()
         {
             try
             {
-                string insertar = string.Format("INSERT INTO especies VALUES( null, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", this.nombreCientifico, this.nombreVulgar,
-                    this.descripcion, this.genero, this.img, this.estatus);
+                string insertar = string.Format("INSERT INTO especies VALUES( '{0}', '{1}', '{2}', '{3}', {4}, '{5}')", this.nombreCientifico, this.nombreVulgar,
+                    this.descripcion, this.genero, "@File", this.estatus);
 
-                res = BD.ABM(insertar);
+                res = BD.ABM(insertar, this.img);
 
                 if (res == 1)
                 {
@@ -81,7 +81,7 @@ namespace AnimalesEnPeligro
         }
 
 
-        private void modificarEspecie()
+        public void modificarEspecie()
         {
             try
             {
