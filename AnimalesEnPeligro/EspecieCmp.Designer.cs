@@ -188,12 +188,12 @@
             this.btnImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.btnImagen.BackgroundImage = global::AnimalesEnPeligro.Properties.Resources.icons8_Download_104px_1;
             this.btnImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnImagen.Location = new System.Drawing.Point(490, 361);
+            this.btnImagen.Location = new System.Drawing.Point(312, 361);
             this.btnImagen.Name = "btnImagen";
-            this.btnImagen.Size = new System.Drawing.Size(131, 46);
+            this.btnImagen.Size = new System.Drawing.Size(309, 46);
             this.btnImagen.Style = MetroFramework.MetroColorStyle.Black;
             this.btnImagen.TabIndex = 14;
-            this.btnImagen.Text = "Imagen";
+            this.btnImagen.Text = "Imagen\r\nArastra y suelta";
             this.btnImagen.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnImagen.UseSelectable = true;
             this.btnImagen.MouseHover += new System.EventHandler(this.btnImagen_MouseHover);

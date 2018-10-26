@@ -25,7 +25,7 @@ namespace AnimalesEnPeligro
         private void btnAlta_Click(object sender, EventArgs e)
         {
             ObservacionesForm observaAlta = new ObservacionesForm();
-            observaAlta.ShowDialog(this);
+            observaAlta.Show(this);
             observaAlta.FormClosed += new FormClosedEventHandler(refreshGrid);
 
         }
@@ -42,7 +42,7 @@ namespace AnimalesEnPeligro
             {
                 var idObservacion = dgObservaciones.CurrentRow.Cells[0].Value.ToString();
                 ObservacionesForm observaModi = new ObservacionesForm(Convert.ToInt32(idObservacion));
-                observaModi.ShowDialog(this);
+                observaModi.Show(this);
             }catch(Exception ex)
             {
                 MetroMessageBox.Show(this, ex.Message);

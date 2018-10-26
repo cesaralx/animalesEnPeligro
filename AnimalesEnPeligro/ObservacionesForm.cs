@@ -48,9 +48,9 @@ namespace AnimalesEnPeligro
 
                 ds2 = BD.Busca(string.Format("SELECT idObservador, nombre from observadores"), "observadores");
 
-                comboObservador.DisplayMember = "idObservador";
-                comboObservador.ValueMember = "nombre";
-                comboObservador.DataSource = ds.Tables["observadores"];
+                comboObservador.DisplayMember = "nombre";
+                comboObservador.ValueMember = "idObservador";
+                comboObservador.DataSource = ds2.Tables["observadores"];
 
             }
             catch (Exception ex)
@@ -65,6 +65,8 @@ namespace AnimalesEnPeligro
            
 
         }
+
+
 
         private void buscarObservacion(int idObservacion)
         {
@@ -97,10 +99,10 @@ namespace AnimalesEnPeligro
         {
             try
             {
-                observa.idObservador = Convert.ToInt32( comboObservador.SelectedItem.ToString() );
+                observa.idObservador = Convert.ToInt32( comboObservador.SelectedValue.ToString() );
                 observa.idEspecie = Convert.ToInt32( comboEspecie.SelectedValue.ToString());
                 observa.cantidad = Convert.ToInt32( txtCantidad.Text);
-                observa.fecha = Convert.ToDateTime(metroDateFecha.Text);
+                observa.fecha = metroDateFecha.Value.Date;
                 observa.detalle = richTexBoxDetalle.Text;
                 observa.registrarObservaciones();
                 //cleanFields();
@@ -113,6 +115,11 @@ namespace AnimalesEnPeligro
             }
 
             this.Close();
+        }
+
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -39,7 +39,7 @@ namespace AnimalesEnPeligro
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
-                MetroMessageBox.Show(null, ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show( ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             finally
@@ -75,7 +75,7 @@ namespace AnimalesEnPeligro
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
-                MetroMessageBox.Show(null, ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show( ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             finally
@@ -105,7 +105,7 @@ namespace AnimalesEnPeligro
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
-                MetroMessageBox.Show(null, ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show( ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             finally

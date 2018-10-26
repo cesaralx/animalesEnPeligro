@@ -92,7 +92,7 @@ namespace AnimalesEnPeligro
             {
 
 
-                if (txtIdAsociacion.Text != null)
+                if (txtIdAsociacion.Text == "")
                 {
                     
 
@@ -151,6 +151,10 @@ namespace AnimalesEnPeligro
             }
 
             this.Close();
+        }
+
+        private void AsociacionesForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 

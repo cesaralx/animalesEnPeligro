@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataObservadores = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrarForm = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataObservadores)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataObservadores
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(478, 400);
-            this.dataGridView1.TabIndex = 29;
+            this.dataObservadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataObservadores.Location = new System.Drawing.Point(18, 55);
+            this.dataObservadores.Name = "dataObservadores";
+            this.dataObservadores.Size = new System.Drawing.Size(478, 400);
+            this.dataObservadores.TabIndex = 29;
             // 
             // label1
             // 
@@ -71,6 +71,7 @@
             this.btnCerrarForm.TabIndex = 33;
             this.btnCerrarForm.Text = "Cerrar";
             this.btnCerrarForm.UseVisualStyleBackColor = false;
+            this.btnCerrarForm.Visible = false;
             // 
             // btnModificar
             // 
@@ -121,6 +122,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // ObservadoresCmp
             // 
@@ -131,11 +133,12 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataObservadores);
             this.Controls.Add(this.label1);
             this.Name = "ObservadoresCmp";
             this.Size = new System.Drawing.Size(652, 514);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ObservadoresCmp_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataObservadores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,7 +150,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataObservadores;
         private System.Windows.Forms.Label label1;
     }
 }

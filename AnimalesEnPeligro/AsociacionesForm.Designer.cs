@@ -313,6 +313,7 @@
             this.Name = "AsociacionesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AsociacionesForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AsociacionesForm_FormClosed);
             this.Load += new System.EventHandler(this.AsociacionesForm_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();

@@ -19,20 +19,22 @@ namespace AnimalesEnPeligro
         public AsociacionesCmp()
         {
             InitializeComponent();
+            asocia.MuestraDataAsociacio(dataAsociaciones);
+
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
             AsociacionesForm alta = new AsociacionesForm();
-            alta.ShowDialog(this);
+            alta.Show(this);
             alta.FormClosed += new FormClosedEventHandler(refreshGrid);
         }
 
         private void refreshGrid(object sender, FormClosedEventArgs e)
         {
             asocia.MuestraDataAsociacio(dataAsociaciones);
-
         }
+
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -40,12 +42,12 @@ namespace AnimalesEnPeligro
             {
                 var idAsociacion = dataAsociaciones.CurrentRow.Cells[0].Value.ToString();
                 AsociacionesForm modi = new AsociacionesForm(Convert.ToInt32(idAsociacion));
-                modi.ShowDialog(this);
-
+                modi.Show(this);
+                modi.FormClosed += new FormClosedEventHandler(refreshGrid);
             }
             catch (Exception ex)
             {
-                MetroMessageBox.Show(this, ex.Message);
+                MessageBox.Show( ex.Message);
             }
 
         }
@@ -61,7 +63,7 @@ namespace AnimalesEnPeligro
 
         private void AsociacionesCmp_Load(object sender, EventArgs e)
         {
-            asocia.MuestraDataAsociacio(dataAsociaciones);
+            dataAsociaciones =  asocia.MuestraDataAsociacio(dataAsociaciones);
 
         }
     }

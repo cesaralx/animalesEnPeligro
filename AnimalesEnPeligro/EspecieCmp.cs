@@ -108,9 +108,9 @@ namespace AnimalesEnPeligro
         {
             try
             {
-                //if (dataImage != null)
-                //{
-                espe.descripcion = txtDescripcion.Text;
+                if (dataImage != null)
+                {
+                    espe.descripcion = txtDescripcion.Text;
                 espe.estatus = comboEstatus.SelectedValue.ToString();
                 espe.genero = comboGenero.SelectedItem.ToString();
                 espe.img = dataImage;
@@ -120,12 +120,12 @@ namespace AnimalesEnPeligro
                 espe.MuestraDataEspecie(dataGridEspecies);
                 cleanFields();
 
-                //}
-                //else
-                //{
-                //    MetroMessageBox.Show(this, "Captura una imagen", "Imagen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "Captura una imagen", "Imagen", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //}
+                }
 
 
             }

@@ -122,6 +122,7 @@
             this.btnCerrarForm.TabIndex = 27;
             this.btnCerrarForm.Text = "Cerrar";
             this.btnCerrarForm.UseVisualStyleBackColor = false;
+            this.btnCerrarForm.Visible = false;
             // 
             // AsociacionesCmp
             // 

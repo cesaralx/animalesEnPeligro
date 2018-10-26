@@ -34,14 +34,14 @@ namespace AnimalesEnPeligro
 
                 if (res == 1)
                 {
-                    MetroMessageBox.Show(null, "Se ha eliminado registro con codigo " + idObservador.ToString(), "Bajas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show( "Se ha eliminado registro con codigo " + idObservador.ToString(), "Bajas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
-                MetroMessageBox.Show(null, ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show( ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally
@@ -71,13 +71,13 @@ namespace AnimalesEnPeligro
 
                 if (res == 1)
                 {
-                    MetroMessageBox.Show(null, "Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show( "Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
-                MetroMessageBox.Show(null, ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show( ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally
@@ -100,14 +100,14 @@ namespace AnimalesEnPeligro
 
                 if (res == 1)
                 {
-                    MetroMessageBox.Show(null, "Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show( "Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
-                MetroMessageBox.Show(null, ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show( ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally
