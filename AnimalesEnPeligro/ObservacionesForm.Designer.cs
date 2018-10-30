@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ObservacionesForm));
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +43,9 @@
             this.richTexBoxDetalle = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAlta = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -112,6 +115,7 @@
             this.txtIdObservador.Size = new System.Drawing.Size(121, 33);
             this.txtIdObservador.TabIndex = 40;
             this.txtIdObservador.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdObservador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdObservador_KeyPress);
             // 
             // label3
             // 
@@ -151,6 +155,8 @@
             this.txtCantidad.Size = new System.Drawing.Size(121, 33);
             this.txtCantidad.TabIndex = 45;
             this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            this.txtCantidad.Validating += new System.ComponentModel.CancelEventHandler(this.txtCantidad_Validating);
             // 
             // metroDateFecha
             // 
@@ -177,6 +183,8 @@
             this.richTexBoxDetalle.Size = new System.Drawing.Size(463, 132);
             this.richTexBoxDetalle.TabIndex = 48;
             this.richTexBoxDetalle.Text = "";
+            this.richTexBoxDetalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTexBoxDetalle_KeyPress);
+            this.richTexBoxDetalle.Validating += new System.ComponentModel.CancelEventHandler(this.richTexBoxDetalle_Validating);
             // 
             // label5
             // 
@@ -204,6 +212,10 @@
             this.btnAlta.UseVisualStyleBackColor = false;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ObservacionesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,6 +240,7 @@
             this.Load += new System.EventHandler(this.ObservacionesForm_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +261,6 @@
         public MetroFramework.Controls.MetroComboBox comboEspecie;
         public MetroFramework.Controls.MetroDateTime metroDateFecha;
         public System.Windows.Forms.RichTextBox richTexBoxDetalle;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -43,7 +43,9 @@ namespace AnimalesEnPeligro
                 var idObservacion = dgObservaciones.CurrentRow.Cells[0].Value.ToString();
                 ObservacionesForm observaModi = new ObservacionesForm(Convert.ToInt32(idObservacion));
                 observaModi.Show(this);
-            }catch(Exception ex)
+                observaModi.FormClosed += new FormClosedEventHandler(refreshGrid);
+            }
+            catch(Exception ex)
             {
                 MetroMessageBox.Show(this, ex.Message);
             }

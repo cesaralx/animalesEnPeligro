@@ -36,7 +36,7 @@
             this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnIniciarSecion = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtUsuario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -80,7 +80,7 @@
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnIniciarSecion);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsuario);
@@ -121,21 +121,21 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnIniciarSecion
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Paper_Plane_42px_1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(104, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 40);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Iniciar Sesión";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnIniciarSecion.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnIniciarSecion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciarSecion.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSecion.ForeColor = System.Drawing.Color.White;
+            this.btnIniciarSecion.Image = global::AnimalesEnPeligro.Properties.Resources.icons8_Paper_Plane_42px_1;
+            this.btnIniciarSecion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIniciarSecion.Location = new System.Drawing.Point(104, 383);
+            this.btnIniciarSecion.Name = "btnIniciarSecion";
+            this.btnIniciarSecion.Size = new System.Drawing.Size(251, 40);
+            this.btnIniciarSecion.TabIndex = 7;
+            this.btnIniciarSecion.Text = "Iniciar Sesión";
+            this.btnIniciarSecion.UseVisualStyleBackColor = false;
+            this.btnIniciarSecion.Click += new System.EventHandler(this.btnIniciarSecion_Click);
             // 
             // pictureBox2
             // 
@@ -153,7 +153,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.HintForeColor = System.Drawing.Color.White;
-            this.txtPassword.HintText = "";
+            this.txtPassword.HintText = "Password";
             this.txtPassword.isPassword = true;
             this.txtPassword.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtPassword.LineIdleColor = System.Drawing.Color.White;
@@ -164,8 +164,9 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(282, 33);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "password";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.OnValueChanged += new System.EventHandler(this.txtPassword_OnValueChanged);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsuario
             // 
@@ -175,9 +176,9 @@
             this.txtUsuario.HintForeColor = System.Drawing.Color.White;
             this.txtUsuario.HintText = "Usuario";
             this.txtUsuario.isPassword = false;
-            this.txtUsuario.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txtUsuario.LineFocusedColor = System.Drawing.Color.MidnightBlue;
             this.txtUsuario.LineIdleColor = System.Drawing.Color.White;
-            this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.MidnightBlue;
             this.txtUsuario.LineThickness = 2;
             this.txtUsuario.Location = new System.Drawing.Point(87, 192);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
@@ -185,6 +186,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(282, 33);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // bunifuGradientPanel1
             // 
@@ -202,6 +204,7 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(712, 296);
             this.bunifuGradientPanel1.TabIndex = 0;
+            this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
             // 
             // btnConfiguration
             // 
@@ -215,6 +218,8 @@
             this.btnConfiguration.TabIndex = 1;
             this.btnConfiguration.TabStop = false;
             this.btnConfiguration.Zoom = 10;
+            this.btnConfiguration.Click += new System.EventHandler(this.btnConfiguration_Click);
+            this.btnConfiguration.MouseHover += new System.EventHandler(this.btnConfiguration_MouseHover);
             // 
             // btnSalir
             // 
@@ -241,6 +246,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.bunifuGradientPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -264,7 +270,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtUsuario;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIniciarSecion;
         private Bunifu.Framework.UI.BunifuImageButton btnConfiguration;
         private Bunifu.Framework.UI.BunifuImageButton btnSalir;
         private System.Windows.Forms.PictureBox pictureBox3;

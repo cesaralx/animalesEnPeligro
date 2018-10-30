@@ -19,6 +19,7 @@ namespace AnimalesEnPeligro
         public ObservacionesForm()
         {
             InitializeComponent();
+            cargraCombos();
         }
 
         public ObservacionesForm(int idObservacion = 0)
@@ -27,15 +28,16 @@ namespace AnimalesEnPeligro
 
             if (idObservacion != 0)
             {
+                cargraCombos();
                 txtIdObservador.Text = idObservacion.ToString();
                 buscarObservacion(idObservacion);
+
             }
-            
-            
+
+
         }
 
-        private void ObservacionesForm_Load(object sender, EventArgs e)
-        {
+        private void cargraCombos(){
             try
             {
                 DataSet ds = new DataSet();
@@ -61,9 +63,10 @@ namespace AnimalesEnPeligro
             {
                 Conexion.conn.Close();
             }
+        }
 
-           
-
+        private void ObservacionesForm_Load(object sender, EventArgs e)
+        {
         }
 
 
@@ -77,8 +80,8 @@ namespace AnimalesEnPeligro
 
                 foreach (DataRow fila in ds.Tables["observaciones"].Rows)
                 {
-                    comboObservador.SelectedItem = fila["idObservador"].ToString();
-                    comboEspecie.SelectedItem = fila["idEspecie"].ToString();
+                    comboObservador.SelectedValue = fila["idObservador"].ToString();
+                    comboEspecie.SelectedValue = fila["idEspecie"].ToString();
                     txtCantidad.Text = fila["cantidad"].ToString();
                     metroDateFecha.Text = fila["fecha"].ToString();
                     richTexBoxDetalle.Text = fila["detalle"].ToString();
@@ -99,12 +102,27 @@ namespace AnimalesEnPeligro
         {
             try
             {
-                observa.idObservador = Convert.ToInt32( comboObservador.SelectedValue.ToString() );
-                observa.idEspecie = Convert.ToInt32( comboEspecie.SelectedValue.ToString());
-                observa.cantidad = Convert.ToInt32( txtCantidad.Text);
-                observa.fecha = metroDateFecha.Value.Date;
-                observa.detalle = richTexBoxDetalle.Text;
-                observa.registrarObservaciones();
+                if (txtIdObservador.Text == "")
+                {
+                    observa.idObservador = Convert.ToInt32(comboObservador.SelectedValue.ToString());
+                    observa.idEspecie = Convert.ToInt32(comboEspecie.SelectedValue.ToString());
+                    observa.cantidad = Convert.ToInt32(txtCantidad.Text);
+                    observa.fecha = metroDateFecha.Value.Date;
+                    observa.detalle = richTexBoxDetalle.Text;
+                    observa.registrarObservaciones();
+                }
+                else
+                {
+                    observa.idObservador = Convert.ToInt32(comboObservador.SelectedValue.ToString());
+                    observa.idEspecie = Convert.ToInt32(comboEspecie.SelectedValue.ToString());
+                    observa.cantidad = Convert.ToInt32(txtCantidad.Text);
+                    observa.fecha = metroDateFecha.Value.Date;
+                    observa.detalle = richTexBoxDetalle.Text;
+                    observa.idObservacion = Convert.ToInt32(txtIdObservador.Text);
+                    observa.modificarObservaciones();
+                }
+
+
                 //cleanFields();
 
 
@@ -120,6 +138,56 @@ namespace AnimalesEnPeligro
         private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtIdObservador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                comboObservador.Focus();
+            }
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                metroDateFecha.Focus();
+            }
+        }
+
+    
+
+        private void txtCantidad_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCantidad.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtCantidad, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void richTexBoxDetalle_Validating(object sender, CancelEventArgs e)
+        {
+            if (richTexBoxDetalle.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(richTexBoxDetalle, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void richTexBoxDetalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnAlta.Focus();
+            }
         }
     }
 }

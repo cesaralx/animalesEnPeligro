@@ -71,6 +71,7 @@
             this.btnCerrarForm.TabIndex = 33;
             this.btnCerrarForm.Text = "Cerrar";
             this.btnCerrarForm.UseVisualStyleBackColor = false;
+            this.btnCerrarForm.Visible = false;
             // 
             // btnModificar
             // 

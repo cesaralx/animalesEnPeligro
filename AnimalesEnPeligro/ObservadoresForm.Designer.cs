@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ObservadoresForm));
             this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtMunicipio = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -56,9 +57,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEstado
@@ -79,6 +82,8 @@
             this.txtEstado.Size = new System.Drawing.Size(178, 33);
             this.txtEstado.TabIndex = 36;
             this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstado_KeyPress);
+            this.txtEstado.Validating += new System.ComponentModel.CancelEventHandler(this.txtEstado_Validating);
             // 
             // txtMunicipio
             // 
@@ -98,6 +103,8 @@
             this.txtMunicipio.Size = new System.Drawing.Size(178, 33);
             this.txtMunicipio.TabIndex = 35;
             this.txtMunicipio.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMunicipio_KeyPress);
+            this.txtMunicipio.Validating += new System.ComponentModel.CancelEventHandler(this.txtMunicipio_Validating);
             // 
             // txtCodigoPostal
             // 
@@ -117,6 +124,8 @@
             this.txtCodigoPostal.Size = new System.Drawing.Size(122, 33);
             this.txtCodigoPostal.TabIndex = 34;
             this.txtCodigoPostal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoPostal_KeyPress);
+            this.txtCodigoPostal.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigoPostal_Validating);
             // 
             // txtColonia
             // 
@@ -136,6 +145,8 @@
             this.txtColonia.Size = new System.Drawing.Size(165, 33);
             this.txtColonia.TabIndex = 33;
             this.txtColonia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtColonia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtColonia_KeyPress);
+            this.txtColonia.Validating += new System.ComponentModel.CancelEventHandler(this.txtColonia_Validating);
             // 
             // txtNoInterior
             // 
@@ -155,6 +166,7 @@
             this.txtNoInterior.Size = new System.Drawing.Size(137, 33);
             this.txtNoInterior.TabIndex = 32;
             this.txtNoInterior.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNoInterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoInterior_KeyPress);
             // 
             // txtNoExterior
             // 
@@ -174,6 +186,8 @@
             this.txtNoExterior.Size = new System.Drawing.Size(122, 33);
             this.txtNoExterior.TabIndex = 31;
             this.txtNoExterior.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNoExterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoExterior_KeyPress);
+            this.txtNoExterior.Validating += new System.ComponentModel.CancelEventHandler(this.txtNoExterior_Validating);
             // 
             // txtCalle
             // 
@@ -193,6 +207,8 @@
             this.txtCalle.Size = new System.Drawing.Size(174, 33);
             this.txtCalle.TabIndex = 30;
             this.txtCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
+            this.txtCalle.Validating += new System.ComponentModel.CancelEventHandler(this.txtCalle_Validating);
             // 
             // txtApellidos
             // 
@@ -212,10 +228,14 @@
             this.txtApellidos.Size = new System.Drawing.Size(239, 33);
             this.txtApellidos.TabIndex = 27;
             this.txtApellidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtApellidos.OnValueChanged += new System.EventHandler(this.txtApellidos_OnValueChanged);
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
+            this.txtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.txtApellidos_Validating);
             // 
             // txtIdObservador
             // 
             this.txtIdObservador.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdObservador.Enabled = false;
             this.txtIdObservador.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtIdObservador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtIdObservador.HintForeColor = System.Drawing.Color.Empty;
@@ -231,6 +251,7 @@
             this.txtIdObservador.Size = new System.Drawing.Size(118, 33);
             this.txtIdObservador.TabIndex = 26;
             this.txtIdObservador.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdObservador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdObservador_KeyPress);
             // 
             // comboAsociacion
             // 
@@ -270,10 +291,13 @@
             this.txtNombre.Size = new System.Drawing.Size(250, 33);
             this.txtNombre.TabIndex = 40;
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // txtCodigo
             // 
             this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCodigo.HintForeColor = System.Drawing.Color.Empty;
@@ -289,6 +313,8 @@
             this.txtCodigo.Size = new System.Drawing.Size(121, 33);
             this.txtCodigo.TabIndex = 41;
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
+            this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigo_Validating);
             // 
             // txtCurp
             // 
@@ -308,6 +334,8 @@
             this.txtCurp.Size = new System.Drawing.Size(201, 33);
             this.txtCurp.TabIndex = 42;
             this.txtCurp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCurp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCurp_KeyPress);
+            this.txtCurp.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurp_Validating);
             // 
             // label3
             // 
@@ -367,6 +395,8 @@
             this.txtUsuario.Size = new System.Drawing.Size(157, 33);
             this.txtUsuario.TabIndex = 48;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
+            this.txtUsuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsuario_Validating);
             // 
             // txtPassword
             // 
@@ -386,6 +416,9 @@
             this.txtPassword.Size = new System.Drawing.Size(165, 33);
             this.txtPassword.TabIndex = 49;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.OnValueChanged += new System.EventHandler(this.txtPassword_OnValueChanged);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // label6
             // 
@@ -483,6 +516,10 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Usuario";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ObservadoresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,6 +550,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,5 +584,6 @@
         public MetroFramework.Controls.MetroComboBox comboPrivilegios;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -156,6 +156,188 @@ namespace AnimalesEnPeligro
         private void AsociacionesForm_FormClosed(object sender, FormClosedEventArgs e)
         {
         }
+
+        private void txtIdAsociacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                txtNombre.Focus();
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtTelefono.Focus();
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                txtCalle.Focus();
+            }
+        }
+
+        private void txtCalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtNoExterior.Focus();
+            }
+        }
+
+        private void txtColonia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtCodigoPostal.Focus();
+            }
+        }
+
+        private void txtNoExterior_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtNoInterior.Focus();
+            }
+        }
+
+        private void txtNoInterior_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtColonia.Focus();
+            }
+        }
+
+        private void txtCodigoPostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                txtMunicipio.Focus();
+            }
+        }
+
+        private void txtMunicipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtEstado.Focus();
+            }
+
+        }
+
+        private void txtEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                btnAlta.Focus();
+            }
+        }
+
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombre.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtNombre, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtTelefono.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtTelefono, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtCalle_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCalle.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtCalle, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtNoExterior_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNoExterior.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtNoExterior, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtColonia_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtColonia.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtColonia, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtCodigoPostal_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCodigoPostal.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtCodigoPostal, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtMunicipio_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtMunicipio.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtMunicipio, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtEstado_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtEstado.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtEstado, "Este campo no puede quedar en blanco");
+            }
+        }
     }
 
 }

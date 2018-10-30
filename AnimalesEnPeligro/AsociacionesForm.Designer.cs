@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AsociacionesForm));
             this.txtIdAsociacion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -43,7 +44,9 @@
             this.txtMunicipio = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnAlta = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdAsociacion
@@ -64,6 +67,7 @@
             this.txtIdAsociacion.Size = new System.Drawing.Size(121, 33);
             this.txtIdAsociacion.TabIndex = 1;
             this.txtIdAsociacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdAsociacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdAsociacion_KeyPress);
             // 
             // bunifuGradientPanel1
             // 
@@ -112,6 +116,8 @@
             this.txtNombre.Size = new System.Drawing.Size(323, 33);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // txtTelefono
             // 
@@ -131,6 +137,8 @@
             this.txtTelefono.Size = new System.Drawing.Size(178, 33);
             this.txtTelefono.TabIndex = 3;
             this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            this.txtTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelefono_Validating);
             // 
             // lbDomicilio
             // 
@@ -160,6 +168,8 @@
             this.txtCalle.Size = new System.Drawing.Size(191, 33);
             this.txtCalle.TabIndex = 5;
             this.txtCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
+            this.txtCalle.Validating += new System.ComponentModel.CancelEventHandler(this.txtCalle_Validating);
             // 
             // txtNoExterior
             // 
@@ -179,6 +189,8 @@
             this.txtNoExterior.Size = new System.Drawing.Size(122, 33);
             this.txtNoExterior.TabIndex = 6;
             this.txtNoExterior.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNoExterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoExterior_KeyPress);
+            this.txtNoExterior.Validating += new System.ComponentModel.CancelEventHandler(this.txtNoExterior_Validating);
             // 
             // txtNoInterior
             // 
@@ -198,6 +210,7 @@
             this.txtNoInterior.Size = new System.Drawing.Size(178, 33);
             this.txtNoInterior.TabIndex = 7;
             this.txtNoInterior.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNoInterior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoInterior_KeyPress);
             // 
             // txtColonia
             // 
@@ -217,6 +230,8 @@
             this.txtColonia.Size = new System.Drawing.Size(191, 33);
             this.txtColonia.TabIndex = 8;
             this.txtColonia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtColonia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtColonia_KeyPress);
+            this.txtColonia.Validating += new System.ComponentModel.CancelEventHandler(this.txtColonia_Validating);
             // 
             // txtCodigoPostal
             // 
@@ -236,6 +251,8 @@
             this.txtCodigoPostal.Size = new System.Drawing.Size(122, 33);
             this.txtCodigoPostal.TabIndex = 9;
             this.txtCodigoPostal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCodigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoPostal_KeyPress);
+            this.txtCodigoPostal.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigoPostal_Validating);
             // 
             // txtMunicipio
             // 
@@ -255,6 +272,8 @@
             this.txtMunicipio.Size = new System.Drawing.Size(178, 33);
             this.txtMunicipio.TabIndex = 10;
             this.txtMunicipio.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMunicipio_KeyPress);
+            this.txtMunicipio.Validating += new System.ComponentModel.CancelEventHandler(this.txtMunicipio_Validating);
             // 
             // txtEstado
             // 
@@ -274,6 +293,8 @@
             this.txtEstado.Size = new System.Drawing.Size(178, 33);
             this.txtEstado.TabIndex = 11;
             this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstado_KeyPress);
+            this.txtEstado.Validating += new System.ComponentModel.CancelEventHandler(this.txtEstado_Validating);
             // 
             // btnAlta
             // 
@@ -290,6 +311,10 @@
             this.btnAlta.Text = "Aceptar";
             this.btnAlta.UseVisualStyleBackColor = false;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // AsociacionesForm
             // 
@@ -317,6 +342,7 @@
             this.Load += new System.EventHandler(this.AsociacionesForm_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +364,6 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtTelefono;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtCalle;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtNoExterior;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

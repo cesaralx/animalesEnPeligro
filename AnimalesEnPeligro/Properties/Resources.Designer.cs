@@ -173,6 +173,26 @@ namespace AnimalesEnPeligro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fox_gif {
+            get {
+                object obj = ResourceManager.GetObject("Fox_gif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giphy {
+            get {
+                object obj = ResourceManager.GetObject("giphy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap giphy__1_ {
             get {
                 object obj = ResourceManager.GetObject("giphy__1_", resourceCulture);
@@ -373,6 +393,16 @@ namespace AnimalesEnPeligro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Screensharing_32px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Screensharing_32px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Search_28px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Search_28px", resourceCulture);
@@ -487,6 +517,16 @@ namespace AnimalesEnPeligro.Properties {
         internal static System.Drawing.Bitmap orig {
             get {
                 object obj = ResourceManager.GetObject("orig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap original {
+            get {
+                object obj = ResourceManager.GetObject("original", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

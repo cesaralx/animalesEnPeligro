@@ -71,7 +71,7 @@ namespace AnimalesEnPeligro
 
                 if (res == 1)
                 {
-                    MessageBox.Show( "Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show( "Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -91,15 +91,15 @@ namespace AnimalesEnPeligro
         {
             try
             {
-                string modificar = string.Format("UPDATE calle SET noExterior='{0}', noInterior='{1}', colonia='{2}', " +
-                     "codigoPostal='{3}', municipio='{4}', estado='{5}' WHERE idDomicilio = {8}", this.calle, this.noExterior,
+                string modificar = string.Format("UPDATE domicilios SET calle='{0}', noExterior='{1}', noInterior='{2}', colonia='{3}', " +
+                     "codigoPostal='{4}', municipio='{5}', estado='{6}' WHERE idDomicilio = {7}", this.calle, this.noExterior,
                      this.noInterior, this.colonia, this.codigoPostal, this.municipio, this.estado,  this.idDomicilio);
 
                 res = BD.ABM(modificar);
 
                 if (res == 1)
                 {
-                    MessageBox.Show( "Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show( "Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }

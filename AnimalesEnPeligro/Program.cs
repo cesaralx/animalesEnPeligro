@@ -8,6 +8,10 @@ namespace AnimalesEnPeligro
 {
     static class Program
     {
+
+        //privilegios
+        public static int cargo;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +20,7 @@ namespace AnimalesEnPeligro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new Login());
         }
     }
 }

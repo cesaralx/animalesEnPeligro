@@ -132,6 +132,99 @@ namespace AnimalesEnPeligro
             cleanFields();
         }
 
+        private void txtIdZona_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                btnBuscar.Focus();
+            }
+        }
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtEstado.Focus();
+            }
+        }
+
+        private void txtEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtMunicipio.Focus();
+            }
+        }
+
+        private void txtMunicipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtCaracteristicas.Focus();
+            }
+
+        }
+
+        private void txtCaracteristicas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            
+        }
+
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombre.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtNombre, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtEstado_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtEstado.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtEstado, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtMunicipio_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtMunicipio.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtMunicipio, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtCaracteristicas_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCaracteristicas.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtCaracteristicas, "Este campo no puede quedar en blanco");
+            }
+
+        }
     }
 }

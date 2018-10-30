@@ -69,13 +69,13 @@ namespace AnimalesEnPeligro
 
                 if (res == 1)
                 {
-                    MessageBox.Show( "Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show( "Se ha agregado un registro", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
-                MessageBox.Show( ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show( ex.Message, "Información usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally
@@ -91,14 +91,14 @@ namespace AnimalesEnPeligro
             try
             {
                 string modificar = string.Format("UPDATE usuarios SET usuario='{0}', password='{1}', idEstatus='{2}', " +
-                     "idObservador='{3}', idPrivilegios='{4}' WHERE idUsuario = {5}", this.usuario, this.password,
+                     "idObservador='{3}', idPrivilegio='{4}' WHERE idUsuario = {5}", this.usuario, this.password,
                      this.idEstatus, this.idObservador, this.idPrivilegios, this.idUsuario);
 
                 res = BD.ABM(modificar);
 
                 if (res == 1)
                 {
-                    MessageBox.Show( "Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show( "Se ha modificado el registro correctamente", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -113,8 +113,7 @@ namespace AnimalesEnPeligro
                 Conexion.conn.Close();
             }
         }
-
-
+     
 
     }
 }

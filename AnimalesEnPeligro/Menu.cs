@@ -14,14 +14,16 @@ namespace AnimalesEnPeligro
 {
     public partial class Menu : Form
     {
-        public Menu()
+        public Menu( )
         {
             InitializeComponent();
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         private void btnMenuDesplegable_Click(object sender, EventArgs e)
         {
             if (panelSidebar.Width == 211)
@@ -42,14 +44,18 @@ namespace AnimalesEnPeligro
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            // Login log = new Login();
+             //Login log = new Login();
             DialogResult resul = MetroMessageBox.Show(this,"¿Seguro que quieres Salir?", "Salir", MessageBoxButtons.YesNo);
 
             if (resul == DialogResult.Yes)
             {
-                Application.Exit();
-                // this.Hide();
-                //log.Show();
+                this.Hide();
+                //Application.Exit();
+                Login login = new Login(false);
+                login.ShowDialog();
+                this.Close();
+
+
             }
         }
 
@@ -131,6 +137,45 @@ namespace AnimalesEnPeligro
             panelReportes.Visible = false;
             panelZonas.Visible = false;
             observacionesCmp1.BringToFront();
+        }
+        private void privilegiosUsuario() {
+            //Administrador = 1
+            //Observador = 2
+
+            if (Program.cargo == 2) {
+                btnAsociaciones.Visible = false;
+                btnZonas.Visible = false;
+                btnObservadores.Visible = false;
+                btnReportes.Visible = false;
+            }
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            privilegiosUsuario();
+            fechaHora.Start();
+
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelSidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
+
+        private void fechaHora_Tick_1(object sender, EventArgs e)
+        {
+            lbFecha.Text = DateTime.Now.ToString();
+
         }
     }
 }

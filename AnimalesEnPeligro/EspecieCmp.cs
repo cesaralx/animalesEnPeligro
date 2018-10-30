@@ -25,7 +25,8 @@ namespace AnimalesEnPeligro
             txtNombreCientifico.Text = "";
             txtNombreVulgar.Text = "";
             comboEstatus.ResetText();
-            comboGenero.ResetText();
+            //comboGenero.ResetText();
+            txtGenero.Text = "";
             lblFoto.Text = "";
             
         }
@@ -43,7 +44,7 @@ namespace AnimalesEnPeligro
         {
             espe.MuestraDataEspecie(dataGridEspecies);
             cargaCombos();
-
+            privilegios();
 
         }
 
@@ -86,7 +87,8 @@ namespace AnimalesEnPeligro
                     txtNombreVulgar.Text = fila["nombreVulgar"].ToString();
 
                     comboEstatus.SelectedItem = fila["estatus"].ToString();
-                    comboGenero.SelectedItem = fila["genero"].ToString();
+                    //comboGenero.SelectedItem = fila["genero"].ToString();
+                    txtGenero.Text = fila["genero"].ToString();
 
                     dataImage = (byte[])fila["img"];
                 }
@@ -111,14 +113,14 @@ namespace AnimalesEnPeligro
                 if (dataImage != null)
                 {
                     espe.descripcion = txtDescripcion.Text;
-                espe.estatus = comboEstatus.SelectedValue.ToString();
-                espe.genero = comboGenero.SelectedItem.ToString();
-                espe.img = dataImage;
-                espe.nombreCientifico = txtNombreCientifico.Text;
-                espe.nombreVulgar = txtNombreVulgar.Text;
-                espe.registrarEspecie();
-                espe.MuestraDataEspecie(dataGridEspecies);
-                cleanFields();
+                    espe.estatus = comboEstatus.SelectedValue.ToString();
+                    espe.genero = txtGenero.Text.ToString();
+                    espe.img = dataImage;
+                    espe.nombreCientifico = txtNombreCientifico.Text;
+                    espe.nombreVulgar = txtNombreVulgar.Text;
+                    espe.registrarEspecie();
+                    espe.MuestraDataEspecie(dataGridEspecies);
+                    cleanFields();
 
                 }
                 else
@@ -208,7 +210,8 @@ namespace AnimalesEnPeligro
         {
             espe.descripcion = txtDescripcion.Text;
             espe.estatus = txtIdEspecie.Text;
-            espe.genero = comboGenero.SelectedItem.ToString();
+            //espe.genero = comboGenero.SelectedItem.ToString();
+            espe.genero = txtGenero.Text.ToString();
             espe.img = dataImage;
             espe.nombreCientifico = txtNombreCientifico.Text;
             espe.nombreVulgar = txtNombreVulgar.Text;
@@ -217,6 +220,119 @@ namespace AnimalesEnPeligro
             espe.modificarEspecie();
 
             espe.MuestraDataEspecie(dataGridEspecies);
+            cleanFields();
+        }
+
+        private void txtIdEspecie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                btnBuscar.Focus();
+            }
+        }
+
+        private void txtNombreCientifico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtNombreVulgar.Focus();
+            }
+        }
+
+        private void txtNombreVulgar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                txtDescripcion.Focus();
+            }
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                txtGenero.Focus();
+            }
+        }
+
+        private void txtNombreCientifico_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombreCientifico.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtNombreCientifico, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtNombreVulgar_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombreVulgar.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtNombreVulgar, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtDescripcion_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtDescripcion.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtDescripcion, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void privilegios() {
+            //Administrador = 1
+            //Observador = 2
+
+            if (Program.cargo == 2)
+            {
+                btnAlta.Enabled = false;
+                btnModificar.Enabled = false;
+            }
+
+        }
+
+        private void txtGenero_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtGenero.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(txtGenero, "Este campo no puede quedar en blanco");
+            }
+        }
+
+        private void txtGenero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == 13)
+            {
+                comboEstatus.Focus();
+            }
+        }
+
+        private void bntClear_Click(object sender, EventArgs e)
+        {
             cleanFields();
         }
     }

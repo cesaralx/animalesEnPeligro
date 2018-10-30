@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtMunicipio = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtNombre = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -38,7 +39,9 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGriedZonas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMunicipio
@@ -59,6 +62,8 @@
             this.txtMunicipio.Size = new System.Drawing.Size(247, 33);
             this.txtMunicipio.TabIndex = 19;
             this.txtMunicipio.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMunicipio_KeyPress);
+            this.txtMunicipio.Validating += new System.ComponentModel.CancelEventHandler(this.txtMunicipio_Validating);
             // 
             // txtEstado
             // 
@@ -78,6 +83,8 @@
             this.txtEstado.Size = new System.Drawing.Size(247, 33);
             this.txtEstado.TabIndex = 18;
             this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstado_KeyPress);
+            this.txtEstado.Validating += new System.ComponentModel.CancelEventHandler(this.txtEstado_Validating);
             // 
             // txtNombre
             // 
@@ -97,6 +104,8 @@
             this.txtNombre.Size = new System.Drawing.Size(247, 33);
             this.txtNombre.TabIndex = 17;
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // txtIdZona
             // 
@@ -116,6 +125,7 @@
             this.txtIdZona.Size = new System.Drawing.Size(134, 33);
             this.txtIdZona.TabIndex = 16;
             this.txtIdZona.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdZona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdZona_KeyPress);
             // 
             // dataGriedZonas
             // 
@@ -157,6 +167,8 @@
             this.txtCaracteristicas.Size = new System.Drawing.Size(247, 33);
             this.txtCaracteristicas.TabIndex = 25;
             this.txtCaracteristicas.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCaracteristicas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaracteristicas_KeyPress);
+            this.txtCaracteristicas.Validating += new System.ComponentModel.CancelEventHandler(this.txtCaracteristicas_Validating);
             // 
             // btnModificar
             // 
@@ -207,6 +219,10 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ZonasCmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +242,7 @@
             this.Size = new System.Drawing.Size(652, 514);
             this.Load += new System.EventHandler(this.ZonasCmp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGriedZonas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +260,6 @@
         private System.Windows.Forms.DataGridView dataGriedZonas;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtCaracteristicas;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
