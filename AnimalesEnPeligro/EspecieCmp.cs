@@ -86,7 +86,7 @@ namespace AnimalesEnPeligro
                     txtNombreCientifico.Text = fila["nombreCientifico"].ToString();
                     txtNombreVulgar.Text = fila["nombreVulgar"].ToString();
 
-                    comboEstatus.SelectedItem = fila["estatus"].ToString();
+                    comboEstatus.SelectedValue = fila["estatus"].ToString();
                     //comboGenero.SelectedItem = fila["genero"].ToString();
                     txtGenero.Text = fila["genero"].ToString();
 
@@ -209,7 +209,7 @@ namespace AnimalesEnPeligro
         private void btnModificar_Click(object sender, EventArgs e)
         {
             espe.descripcion = txtDescripcion.Text;
-            espe.estatus = txtIdEspecie.Text;
+            espe.estatus = comboEstatus.SelectedValue.ToString();
             //espe.genero = comboGenero.SelectedItem.ToString();
             espe.genero = txtGenero.Text.ToString();
             espe.img = dataImage;
