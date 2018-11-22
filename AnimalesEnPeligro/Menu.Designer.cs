@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,13 +56,14 @@
             this.btnEspecies = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSalir = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnObservaciones = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.fechaHora = new System.Windows.Forms.Timer(this.components);
             this.mainMenuCmp1 = new AnimalesEnPeligro.MainMenuCmp();
             this.observacionesCmp1 = new AnimalesEnPeligro.ObservacionesCmp();
             this.observadoresCmp1 = new AnimalesEnPeligro.ObservadoresCmp();
             this.asociacionesCmp1 = new AnimalesEnPeligro.AsociacionesCmp();
             this.zonasCmp1 = new AnimalesEnPeligro.ZonasCmp();
             this.especieCmp1 = new AnimalesEnPeligro.EspecieCmp();
-            this.fechaHora = new System.Windows.Forms.Timer(this.components);
+            this.menureportes1 = new AnimalesEnPeligro.Menureportes();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuDesplegable)).BeginInit();
@@ -119,11 +120,11 @@
             this.lbFecha.AutoSize = true;
             this.lbFecha.BackColor = System.Drawing.Color.Transparent;
             this.bunifuTransition1.SetDecoration(this.lbFecha, BunifuAnimatorNS.DecorationType.None);
-            this.lbFecha.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFecha.Font = new System.Drawing.Font("Segoe UI Historic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFecha.ForeColor = System.Drawing.Color.White;
             this.lbFecha.Location = new System.Drawing.Point(52, 12);
             this.lbFecha.Name = "lbFecha";
-            this.lbFecha.Size = new System.Drawing.Size(43, 25);
+            this.lbFecha.Size = new System.Drawing.Size(34, 20);
             this.lbFecha.TabIndex = 18;
             this.lbFecha.Text = "text";
             // 
@@ -179,11 +180,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuTransition1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(234, 5);
+            this.label1.Location = new System.Drawing.Point(263, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(481, 32);
+            this.label1.Size = new System.Drawing.Size(417, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reporte de Especies en Peligro de Extinción";
             // 
@@ -207,22 +208,22 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.bunifuTransition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.bunifuTransition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            this.bunifuTransition1.DefaultAnimation = animation2;
             this.bunifuTransition1.TimeStep = 0.03F;
             // 
             // panelSidebar
@@ -322,6 +323,7 @@
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnReportes.Textcolor = System.Drawing.Color.White;
             this.btnReportes.TextFont = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnZonas
             // 
@@ -593,6 +595,10 @@
             this.btnObservaciones.TextFont = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObservaciones.Click += new System.EventHandler(this.btnObservaciones_Click);
             // 
+            // fechaHora
+            // 
+            this.fechaHora.Tick += new System.EventHandler(this.fechaHora_Tick_1);
+            // 
             // mainMenuCmp1
             // 
             this.bunifuTransition1.SetDecoration(this.mainMenuCmp1, BunifuAnimatorNS.DecorationType.None);
@@ -646,9 +652,13 @@
             this.especieCmp1.Size = new System.Drawing.Size(652, 514);
             this.especieCmp1.TabIndex = 10;
             // 
-            // fechaHora
+            // menureportes1
             // 
-            this.fechaHora.Tick += new System.EventHandler(this.fechaHora_Tick_1);
+            this.bunifuTransition1.SetDecoration(this.menureportes1, BunifuAnimatorNS.DecorationType.None);
+            this.menureportes1.Location = new System.Drawing.Point(208, 44);
+            this.menureportes1.Name = "menureportes1";
+            this.menureportes1.Size = new System.Drawing.Size(652, 518);
+            this.menureportes1.TabIndex = 16;
             // 
             // Menu
             // 
@@ -664,6 +674,7 @@
             this.Controls.Add(this.especieCmp1);
             this.Controls.Add(this.panelSidebar);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menureportes1);
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
@@ -717,5 +728,6 @@
         private ObservacionesCmp observacionesCmp1;
         private MainMenuCmp mainMenuCmp1;
         private System.Windows.Forms.Timer fechaHora;
+        private Menureportes menureportes1;
     }
 }

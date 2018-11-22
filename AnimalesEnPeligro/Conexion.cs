@@ -12,7 +12,7 @@ namespace AnimalesEnPeligro
 {
     class Conexion
     {
-        public static SqlConnection conn = new SqlConnection("Initial Catalog=examen; Data Source=localhost; Integrated Security=SSPI;");
+        public static SqlConnection conn = new SqlConnection("Initial Catalog=examen; Data Source=CESARAL-MOBL2\\SQLEXPRESS; Integrated Security=SSPI;");
 
         public DataSet ConsultaTab(string tabla, string campo)
         {

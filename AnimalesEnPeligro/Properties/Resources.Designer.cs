@@ -233,6 +233,16 @@ namespace AnimalesEnPeligro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Binoculars_104px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Binoculars_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Business_Building_50px_2 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Business_Building_50px_2", resourceCulture);
@@ -256,6 +266,26 @@ namespace AnimalesEnPeligro.Properties {
         internal static System.Drawing.Bitmap icons8_Delete_Bin_28px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Delete_Bin_28px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Dinosaur_104px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Dinosaur_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Dinosaur_52px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Dinosaur_52px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -177,5 +177,17 @@ namespace AnimalesEnPeligro
             lbFecha.Text = DateTime.Now.ToString();
 
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            
+            panelEspecies.Visible = false;
+            panelAsociaciones.Visible = false;
+            panelObservaciones.Visible = false;
+            panelObservadores.Visible = false;
+            panelReportes.Visible = false;
+            panelZonas.Visible = true;
+            menureportes1.BringToFront();
+        }
     }
 }
