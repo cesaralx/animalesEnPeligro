@@ -409,7 +409,7 @@ namespace AnimalesEnPeligro.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtObservadoresRow AdddtObservadoresRow(int codigo, string nombreCompleto, string direccion, int idObservacion, string zonaEstado, string asoNombre) {
+            public dtObservadoresRow AdddtObservadoresRow(string codigo, string nombreCompleto, string direccion, int idObservacion, string zonaEstado, string asoNombre) {
                 dtObservadoresRow rowdtObservadoresRow = ((dtObservadoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo,
@@ -451,7 +451,7 @@ namespace AnimalesEnPeligro.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo);
                 this.columnnombreCompleto = new global::System.Data.DataColumn("nombreCompleto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombreCompleto);
@@ -605,10 +605,10 @@ namespace AnimalesEnPeligro.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int codigo {
+            public string codigo {
                 get {
                     try {
-                        return ((int)(this[this.tabledtObservadores.codigoColumn]));
+                        return ((string)(this[this.tabledtObservadores.codigoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'codigo\' in table \'dtObservadores\' is DBNull.", e);

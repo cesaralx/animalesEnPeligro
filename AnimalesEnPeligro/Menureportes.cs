@@ -74,7 +74,7 @@ namespace AnimalesEnPeligro
             }
 
 
-            ReporteUno rep1 = new ReporteUno(dsProd.dtUsuariosRep1);
+            ReporteUno rep1 = new ReporteUno(dsProd.dtUsuariosRep1, date1, date2);
             rep1.ShowDialog();
         }
 

@@ -19,7 +19,9 @@ namespace AnimalesEnPeligro.formReportes
         {
             InitializeComponent();
             CRProd.SetDataSource(dt);
+
             crystalReportViewer1.ReportSource = CRProd;
+
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)

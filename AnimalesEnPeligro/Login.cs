@@ -26,23 +26,25 @@ namespace AnimalesEnPeligro
         {
             InitializeComponent();
             this.TransparencyKey = (BackColor);
-            try
-            {
+
                 if (h)
                 {
-                    Thread hilo = new Thread(new ThreadStart(iniciarSplash));
-                    hilo.Start();
-                    Thread.Sleep(3500);
-                    hilo.Abort();
-                    this.TopMost = true;
-                    this.BringToFront();
-                }
+                    try
+                    {
+                        Thread hilo = new Thread(new ThreadStart(iniciarSplash));
+                        hilo.Start();
+                        Thread.Sleep(3500);
+                        hilo.Abort();
+                        this.TopMost = true;
+                        this.BringToFront();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al iniciar componentes " + ex);
+                    }
+            }
 
-            }
-            catch (Exception ex)
-            {
-                Console.Write("Error al iniciar componentes " + ex);
-            }
+
         }
 
         public void iniciarSplash()
